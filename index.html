@@ -4,84 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gettin' Giphy With It</title>
-</head>
-<body>
+    
+    <!-- bootstrap link, jquery, and link to stylesheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="./assets/javascript/app.js"></script>
+    <title>Giphtastic</title>
 
-    <body>
-        <button data-person="Will Smith">Fresh Prince</button>
-        <button data-person="Gritty">
-          Gritty
-        </button>
-      
-      
-        <button data-person="Benjamin Franklin">
-          Benjamin Franklin
-        </button>
-        <button data-person="Cheese Steak">
-          Cheese Steak
-        </button>
-        <button data-person="Philadelphia Orchestra">
-          The Sound of Philadelphia
-        </button>
-      
-        <div id="gifs-appear-here">
+
+</head>
+
+<body>
+<h1> Click the Gif to Start and Stop! </h1>
+    
+<div class="container">
+    <div class="card text-white bg-dark mb-3" id="titleCard">
+        <div class="card-body">
+            <h5 class="card-title">Giphtastic!</h5>
+            <p class="card-text">Type into the box to add your own gif search.</p>
         </div>
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script type="text/javascript">
-          // Event listener for all button elements
-          $("button").on("click", function() {
-            // In this case, the "this" keyword refers to the button that was clicked
-            var person = $(this).attr("data-person");
-      
-            // Constructing a URL to search Giphy for images on Philadelphia area Subject based on nick name or cultural
-            var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-              person + "&api_key=PaOSC7zPgMYPi9RUUIY90VY7tn3Q3cJP&limit=5";
-              //my api key for giphy and limit changed to 5
-      
-            // Performing our AJAX GET request
-            $.ajax({
-              url: queryURL,
-              method: "GET"
-            })
-              // After the data comes back from the API
-              .then(function(response) {
-                // Storing an array of results in the results variable
-                var results = response.data;
-      
-                // Looping over every result item
-                for (var i = 0; i < results.length; i++) {
-      
-                  // Only taking action if the photo has an appropriate rating
-                  if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
-                    // Creating a div for the gif
-                    var gifDiv = $("<div>");
-      
-                    // Storing the result item's rating
-                    var rating = results[i].rating;
-      
-                    // Creating a paragraph tag with the result item's rating
-                    var p = $("<p>").text("Rating: " + rating);
-      
-                    // Creating an image tag
-                    var personImage = $("<img>");
-      
-                    // Giving the image tag an src attribute of a proprty pulled off the
-                    // result item
-                    personImage.attr("src", results[i].images.fixed_height.url);
-      
-                    // Appending the paragraph and personImage we created to the "gifDiv" div we created
-                    gifDiv.append(p);
-                    gifDiv.append(personImage);
-      
-                    // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
-                    $("#gifs-appear-here").prepend(gifDiv);
-                  }
-                }
-              });
-          });
-        </script>
+    </div>
+    <div class="row">
+        <div class="card col-md-12">
+            <div class="card-header">
+                <form class="form-inline">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="addNew" class="sr-only">Gif Search</label>
+                        <input type="text" class="form-control" id="addNew" placeholder="Add a search word">
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary mb-2" id="add">Add</button>
+                </form>
+                <p id="buttons"></p>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Philly themed Gifs</h5>
+                <div class="col-md-12" id="gif-space"></div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!--  
+      deleted most of old code, div method is not what homework calls for -->
+<!-- code from assignments, not used in homework, keeping in this file until I see no use for it.
+    <script type="text/javascript">
+    $(".gif").on("click", function() {
+      // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+      var state = $(this).attr("data-state");
+      // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+      // Then, set the image's data-state to animate
+      // Else set src to the data-still value
+      if (state === "still") {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+      } else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+      }
+    }); -->
+
+
 
 
     

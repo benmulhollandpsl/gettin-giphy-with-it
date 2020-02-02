@@ -1,0 +1,39 @@
+body {
+    background: #015aa3;
+}
+
+h1 {text-align: center}
+
+#titleCard {
+    text-align: right;
+}
+
+.container {
+    align-content: center;
+}
+
+form {
+    padding: 5px;
+}
+
+.gifButton {
+    margin: 5px;
+}
+
+.card {
+    margin: 5px;
+    color: green;
+}
+
+#clickHere {
+    color: red;
+}
+
+img {
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+img:hover {
+    border: 3px orange;
+}
