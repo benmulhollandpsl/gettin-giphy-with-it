@@ -2,7 +2,8 @@ body {
     background: #015aa3;
 }
 
-h1 {text-align: center}
+h1 {text-align: center;
+    color: white;}
 
 #titleCard {
     text-align: right;
@@ -10,6 +11,7 @@ h1 {text-align: center}
 
 .container {
     align-content: center;
+    background-color: black;
 }
 
 form {

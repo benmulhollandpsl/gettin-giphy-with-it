@@ -9,7 +9,7 @@ $(document).ready(function(){
 
     for (let i = 0; i < topics.length; i++) {
         var newButton = $("<button>");
-        newButton.addClass("gifButton btn btn-secondary");
+        newButton.addClass("gifButton btn btn-success");
         newButton.attr("type", "button");
         newButton.attr("value", topics[i])
         newButton.text(topics[i]);
@@ -24,7 +24,7 @@ $(document).ready(function(){
         } else {
             var button = $("<button>");
             var buttonName = $("#addNew").val();
-            button.addClass("gifButton btn btn-secondary");
+            button.addClass("gifButton btn btn-success");
             button.attr("type", "button");
             button.attr("value", buttonName);
             button.text(buttonName);
