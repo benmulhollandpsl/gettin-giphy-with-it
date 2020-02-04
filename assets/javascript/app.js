@@ -50,6 +50,7 @@ $(document).on("click", ".gifButton", function () {
         cardGroup = $("<div>");
         cardGroup.addClass("card-group");
         cardGroup.attr("id", "group" + topicNumber);
+                //card group needs to be a container, needs class container ever 4 need a row to break for a row,  -if i %= 0 create a row then place in the row
         $("#gif-space").prepend(cardGroup);
 
         for (let i = 0; i < result.data.length; i++) {
