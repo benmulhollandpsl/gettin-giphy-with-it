@@ -2,7 +2,7 @@
 GifTastic Giphy API bootcamp assignment 
 
 ## Demo 
-![gif of giphtastic getting giphy with it](giphtastic.gif)
+![gif of giphtastic getting giphy with it](Giphtastic.gif)
 
 
 
