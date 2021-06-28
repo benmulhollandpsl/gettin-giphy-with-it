@@ -24,7 +24,7 @@ h1 {text-align: center;
 }
 
 form {
-    padding: 5px;
+    padding: 1rem;
 }
 
 .gifButton {
@@ -32,7 +32,7 @@ form {
 }
 
 .card {
-    margin: 5px;
+    margin: 3rem, 33%, auto;
     color: green;
 }
 
@@ -41,10 +41,10 @@ form {
 }
 
 img {
-    border-radius: 5px;
+    border-radius: .5rem;
     transition: 0.3s;
 }
 
 img:hover {
-    border: 3px orange;
+    border: .5rem orange;
 }
